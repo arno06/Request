@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Request.js</title>
+        <script src="../../Dependencies/src/?need=Request"></script>
+        <script>
+            function completeHandler(pEvent)
+            {
+                console.log('completeHandler', pEvent);
+            }
+
+            function errorHandler(pEvent)
+            {
+                console.log('errorHandler', pEvent);
+            }
+
+            /**
+             * Requête correcte
+             */
+            var url = "index.html";
+            var params = {};
+            var method = 'get';//or post
+            var req = new Request(url, params, method);
+            req.addEventListener(Event.COMPLETE, completeHandler, false);
+
+            /**
+             * Requête déclenchant une erreur
+             */
+            url = "404.html";
+            req = new Request(url, params, method);
+            req.addEventListener(Event.COMPLETE, completeHandler, false);
+            req.addEventListener(RequestEvent.ERROR, errorHandler, false);
+        </script>
+    </head>
+    <body>
+        <h1>F12</h1>
+    </body>
+</html>
