@@ -46,6 +46,7 @@ function Request(pTarget, pParams, pMethod)
         }
     };
     this.xhr_object.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset:'+Request.CHARSET);
+    this.xhr_object.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     try
     {
         this.xhr_object.send(v);
