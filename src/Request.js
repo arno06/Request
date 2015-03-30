@@ -23,7 +23,7 @@ function Request(pTarget, pParams, pMethod)
         if(ref.xhr_object.readyState==4)
         {
             var ct = ref.xhr_object.getResponseHeader("Content-type");
-            if(ct.indexOf("json")>-1)
+            if(ct && ct.indexOf("json")>-1)
                 ref.xhr_object.responseJSON = JSON.parse(ref.xhr_object.responseText);
             switch(ref.xhr_object.status)
             {
