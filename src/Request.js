@@ -27,7 +27,7 @@ function Request(pTarget, pParams, pMethod)
 				case 304:
 				case 200:
 					var ct = ref.xhr_object.getResponseHeader("Content-type");
-					if(ct.indexOf("json")>-1)
+					if(ct && ct.indexOf("json")>-1)
 						eval("ref.xhr_object.responseJSON = "+ref.xhr_object.responseText+";");
 					ref.dispatchEvent(new RequestEvent(Event.COMPLETE, ref.xhr_object.responseText, ref.xhr_object.responseJSON));
 				break;
