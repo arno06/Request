@@ -1,11 +1,21 @@
 Request
 ===========
 
-Dependencies
+XMLHttpRequest Wrapper
+
+Dependencies(es6)
+------------
+None
+
+https://dependencies.arnaud-nicolas.fr/?need=Request.es6
+
+Dependencies (es5)
 ------------
 * Class
 * EventDispatcher
 * Event
+
+https://dependencies.arnaud-nicolas.fr/?need=Request
 
 Example
 ------------

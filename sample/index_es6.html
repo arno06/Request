@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request.js</title>
+    <script src="../src/es6.Request.js"></script>
+    <script>
+        "use strict";
+        function completeHandler(pEvent)
+        {
+            console.log('completeHandler', pEvent);
+        }
+
+        function errorHandler(pEvent)
+        {
+            console.log('errorHandler', pEvent);
+        }
+
+        /**
+         * Requête correcte
+         */
+        var url = "index.html";
+        var params = {};
+        var method = 'get';//or post
+        var req = new Request(url, params, method);
+        req.onComplete(completeHandler);
+
+        /**
+         * Requête déclenchant une erreur
+         */
+        url = "404.html";
+        req = new Request(url, params, method);
+        req.onComplete(completeHandler);
+        req.onError(errorHandler);
+
+        /**
+         * Requête chainé
+         */
+        Request.load("print_r_post.php", {"foo":"bar", "obj":{"test":"value", "bouboup":"fbiagent", "foo":["one", 2, "three"]}}, method)
+                .onComplete(completeHandler)
+                .onError(errorHandler);
+
+        /**
+         * Requête avec du JSON en résultat
+         */
+        Request.load('file.json').onComplete(function(e)
+        {
+            console.log('completeHandler', e.currentTarget.responseJSON);
+        });
+    </script>
+</head>
+<body>
+<h1>F12</h1>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+	"foo":"bar",
+	"array":[
+		"one",
+		2,
+		"three"
+	]
+}
