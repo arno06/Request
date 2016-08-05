@@ -63,10 +63,10 @@ class Request
         {
             return;
         }
-        var contentType = this.xhr_object.getResponseHeader("Content-type");
+        let contentType = this.xhr_object.getResponseHeader("Content-type");
         if(contentType.indexOf("json")>-1)
             e.currentTarget.responseJSON = JSON.parse(this.xhr_object.responseText);
-        var type = (this.xhr_object.status < 200 || this.xhr_object.status > 300)?Request.ERROR:Request.COMPLETE;
+        let type = (this.xhr_object.status < 200 || this.xhr_object.status > 300)?Request.ERROR:Request.COMPLETE;
         this.xhr_object.dispatchEvent(new Event(type));
     }
 
@@ -107,9 +107,8 @@ class Request
 
     static serializeParams(pObject, pParent = null)
     {
-        var params = [];
-        var value, name;
-        for(var i in pObject)
+        var params = [], value, name;
+        for(let i in pObject)
         {
             if(!pObject.hasOwnProperty(i))
                 continue;
