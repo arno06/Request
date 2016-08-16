@@ -5,47 +5,6 @@
  */
 class Request
 {
-    /**
-     * @returns {string}
-     */
-    static get ERROR() { return "error"; }
-    /**
-     * @returns {string}
-     */
-    static get LOAD_START() { return "loadstart"; }
-    /**
-     * @returns {string}
-     */
-    static get LOAD() { return "load"; }
-    /**
-     * @returns {string}
-     */
-    static get LOAD_END() { return "loadend"; }
-    /**
-     * @returns {string}
-     */
-    static get PROGRESS() { return "progress"; }
-    /**
-     * @returns {string}
-     */
-    static get ABORT() { return "abort"; }
-    /**
-     * @returns {string}
-     */
-    static get TIME_OUT() { return "timeout"; }
-    /**
-     * @returns {string}
-     */
-    static get READY_STATE_CHANGE() { return "readystatechange"; }
-    /**
-     * @returns {string}
-     */
-    static get COMPLETE() { return "complete"; }
-    /**
-     * @returns {string}
-     */
-    static get CHARSET() { return "UTF-8"; }
-
     constructor(pUrl, pParameters = null, pMethod = 'get') {
         this.parameters = pParameters;
         this.error = false;
@@ -139,3 +98,14 @@ class Request
         Request.load(pUrl, pParameters).onComplete(function(e){document.querySelector(pSelector).innerHTML = e.responseText;});
     }
 }
+
+Request.ERROR = "error";
+Request.LOAD_START = "loadstart";
+Request.LOAD = "load";
+Request.LOAD_END = "loadend";
+Request.PROGRESS = "progress";
+Request.ABORT = "abort";
+Request.TIME_OUT = "timeout";
+Request.READY_STATE_CHANGE = "readystatechange";
+Request.COMPLETE = "complete";
+Request.CHARSET = "UTF-8";
