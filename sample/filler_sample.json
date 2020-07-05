@@ -1,0 +1,6 @@
+{
+	"content": {
+		"body h1": "Hello world, h1 created from selector",
+		".existing_element": "<div class='test'>Test of inserting html into an existing element</div>"
+	}
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Request filler</title>
+        <script src="../src/es6.Request.js"></script>
+        <script src="../src/Request.filler.js"></script>
+        <script>
+            function init(){
+                Request.filler('filler_sample.json', {selectorsPath: 'content'});
+            }
+            document.addEventListener('DOMContentLoaded', init, false);
+        </script>
+    </head>
+    <body>
+        <div class="existing_element">
+            Chargement...
+        </div>
+    </body>
+</html>
